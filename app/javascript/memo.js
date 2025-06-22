@@ -14,7 +14,7 @@ const buildHTML = (XHR) => {
 
 function post() {
   const form = document.getElementById("form");
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault(); // ← この1行を追加！
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
@@ -29,22 +29,9 @@ function post() {
       const list = document.getElementById("list");
       const formText = document.getElementById("content");
       list.insertAdjacentHTML("afterend", buildHTML(XHR));
-      console.log(formText.value);
-      const item = XHR.response.post;
-      const html = `
-        <div class="post">
-          <div class="post-date">
-            投稿日時：${item.created_at}
-          </div>
-          <div class="post-content">
-            ${item.content}
-          </div>
-        </div>`;
-      list.insertAdjacentHTML("afterend", html);
       formText.value = "";
     };
   });
 }
 
 window.addEventListener("turbo:load", post);
-console.log("memo.js 読み込み確認");
