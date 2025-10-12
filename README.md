@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# railsチェックアプリ
 
-Things you may want to cover:
+## 概要
+銀行バックオフィス業務の「手作業チェック」を効率化するためのrailsアプリ。  
+目的は、属人化と判断疲労を減らす仕組みを具体化すること。
 
-* Ruby version
+## 開発の背景
+現職では、口座振替申込書などを人が目視で確認している。  
+経験によって基準が違い、ダブルチェックも発生。  
+その手間をシステムで吸収できないか？という仮説から始まった。
 
-* System dependencies
+## 技術構成
+- Ruby 3.x / Rails 7.x  
+- PostgreSQL  
+- Bootstrap / SCSS  
+- Renderでデプロイ予定
 
-* Configuration
+## 実装済み機能
+- 書類種別と項目のCRUD  
+- 入力フォームとチェック画面  
+- 判定結果を一覧化して再利用できる構造  
+- seedデータによる初期登録
 
-* Database creation
+## 工夫した点
+- モデル設計を「現場の業務手順」に寄せた  
+- コードよりもフローの見通しを優先  
+- 目的：人が判断しなくても済む構造を設計すること  
 
-* Database initialization
+## 今後の計画
+- 管理者画面の整備  
+- AI連携による自動判定の試作  
+- 実際の業務画面を模したUI改善  
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
